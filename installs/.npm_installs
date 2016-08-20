@@ -1,0 +1,19 @@
+function require_npm() {
+  running "npm $*"
+  npm list -g --depth 0 | grep $1@ > /dev/null
+  if [[ $? != 0 ]]; then
+    action "npm install -g $*"
+    npm install -g $@
+  fi
+  ok
+}
+
+require_npm http-server
+require_npm empty-trash-cli
+require_npm fkill-cli
+require_npm speed-test
+require_npm wifi-password
+require_npm gh-home
+require_npm pretty-error
+
+bot "npm packages installed successfully"

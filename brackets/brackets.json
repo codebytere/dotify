@@ -1,0 +1,15 @@
+{
+		"fonts.fontSize": "13px",
+		"hirse.beautify.onSave": true,
+		"linting.collapsed": true,
+		"fonts.fontFamily": "'Monaco', ＭＳ ゴシック, 'MS Gothic', monospace",
+		"themes.theme": "dark-theme",
+		"brackets-wsSanitizer.enabled": true,
+		"useTabChar": true,
+		"spaceUnits": 2,
+		"tabSize": 2,
+		"denniskehrig.ShowWhitespace.checked": true,
+		"language.fileExtensions": {
+				"": "bash"
+		}
+}

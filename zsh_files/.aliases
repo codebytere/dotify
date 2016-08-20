@@ -1,0 +1,34 @@
+############### NAVIGATION ###############
+
+alias back="cd .."
+alias home="cd ~"
+
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias dvlpr="cd ~/Developer"
+
+alias lsa="ls -a"
+alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+
+############### SYSTEM ##############
+
+alias customize="brackets ~/.zshrc"
+alias reload!='. ~/.zshrc'
+
+alias cls='clear'
+
+alias spotoff="sudo mdutil -a -i off" # Disable Spotlight
+alias spoton="sudo mdutil -a -i on" # Enable Spotlight
+
+############### MISCELLANEOUS ###############
+
+alias python="python3"
+alias pip="pip3"
+
+alias localip="ipconfig getifaddr en0" #get IP address
+
+#lock the screen
+alias lksc="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+#turn off volume
+alias stfu="osascript -e 'set volume output muted true'"

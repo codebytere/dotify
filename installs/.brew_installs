@@ -1,0 +1,63 @@
+function require_brew() {
+  running "brew cask install $1 $2"
+  brew list $1 > /dev/null 2>&1 | true
+  if [[ ${PIPESTATUS[0]} != 0 ]]; then
+    action "brew install $1"
+    brew install $1 $2
+    if [[ $? != 0 ]]; then
+      error "failed to install $1! aborting..."
+      exit -1
+    fi
+  fi
+  ok
+}
+
+function cask_install() {
+  running "brew cask $1"
+  brew cask search $1 > /dev/null 2>&1 | true
+  if [[ ${PIPESTATUS[0]} != 0 ]]; then
+    action "brew cask install $1 $2"
+    brew cask install $1 $2
+    if [[ $? != 0 ]]; then
+      error "failed to install $1! aborting..."
+      exit -1
+    fi
+  fi
+  ok
+}
+
+########## BREW PKGS ##########
+require_brew m-cli
+require_brew zsh
+require_brew fontconfig
+require_brew git
+require_brew ruby
+
+########## APPS ###########
+brew tap caskroom/cask
+
+#development
+cask_install brackets
+cask_install iterm2
+cask_install postman
+
+# media
+cask_install vlc
+cask_install spotify
+cask_install transmission
+cask_install cumulus
+
+#communication
+cask_install slack
+
+#misc
+cask_install google-chrome
+cask_install dockertoolbox
+cask_install flux
+cask_install nimble
+cask_install dropbox
+
+#security
+cask_install 1password
+
+bot "brew and brew cask packages installed successfully"

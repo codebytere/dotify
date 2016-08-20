@@ -1,0 +1,138 @@
+[user]
+	name = YOUR NAME
+	email = YOUR EMAIL
+
+[core]
+	editor = brackets --wait
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol, space-before-tab
+	excludesfile = ~/.gitignore
+
+[web]
+	browser = google-chrome
+
+[rerere]
+	enabled = 1
+	autoupdate = 1
+
+[push]
+	default = simple
+
+[color]
+	ui = auto
+
+[help]
+  autocorrect = 1
+
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+
+[alias]
+	#############
+	aliases = config --get-regexp alias
+	a = add --all
+	ai = add -i
+	#############
+	ap = apply
+	as = apply --stat
+	ac = apply --check
+	#############
+	ama = am --abort
+	amr = am --resolved
+	ams = am --skip
+	#############
+	b = branch
+	ba = branch -a
+	bd = branch -d
+	br = branch -r
+	#############
+	c = commit
+	ca = commit -a
+	cm = commit -m
+	cam = commit -am
+	cd = commit --amend
+	cp = cherry-pick
+	#############
+	d = diff
+	#############
+	f = fetch
+	fo = fetch origin
+	fu = fetch upstream
+	#############
+	fp = format-patch
+	#############
+	g = grep -p
+	#############
+	ls = ls-files
+	lsf = "!git ls-files | grep -i"
+	#############
+	m = merge
+	ma = merge --abort
+	mc = merge --continue
+	ms = merge --skip
+	#############
+	co = checkout
+	cob = checkout -b
+  com = checkout master
+	#############
+	pr = prune -v
+	#############
+	ps = push
+	psf = push -f
+	psu = push -u
+	pso = push origin
+	psao = push --all origin
+	psfo = push -f origin
+	psuo = push -u origin
+	psom = push origin master
+	#############
+	pl = pull
+	plu = pull -u
+	plo = pull origin
+	plp = pull upstream
+	plom = pull origin master
+	#############
+	pb = pull --rebase
+	pbo = pull --rebase origin
+	pbp = pull --rebase upstream
+	pbom = pull --rebase origin master
+	pbpm = pull --rebase upstream master
+	#############
+	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbi = rebase --interactive
+	rbs = rebase --skip
+	#############
+	re = reset
+	rh = reset HEAD
+	reh = reset --hard
+	res = reset --soft
+	rehh = reset --hard HEAD
+	resh = reset --soft HEAD
+	#############
+	r = remote
+	ra = remote add
+	rr = remote rm
+	rv = remote -v
+	rm = remote rename
+	rs = remote show
+	rao = remote add origin
+	rso = remote show origin
+	#############
+	s = status
+	sb = status -s -b
+wh
