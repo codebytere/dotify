@@ -27,37 +27,87 @@ function cask_install() {
 }
 
 ########## BREW PKGS ##########
-require_brew m-cli
-require_brew zsh
-require_brew fontconfig
-require_brew git
-require_brew ruby
+yes_or_no "would you like to install m-cli?"
+if confirmed; then
+  require_brew m-cli
+fi
+
+yes_or_no "would you like to install zsh?"
+if confirmed; then
+  require_brew zsh
+fi
+
+yes_or_no "would you like to install fontconfig?"
+if confirmed; then
+  require_brew fontconfig
+fi
+
+yes_or_no "would you like to install git?"
+if confirmed; then
+  require_brew git
+fi
 
 ########## APPS ###########
 brew tap caskroom/cask
 
-#development
-cask_install brackets
-cask_install iterm2
-cask_install postman
+#### DEVELOPMENT ####
+yes_or_no "would you like to install iterm?"
+if confirmed; then
+  cask_install iterm2
+fi
 
-# media
-cask_install vlc
-cask_install spotify
-cask_install transmission
-cask_install cumulus
+#### MEDIA ####
+yes_or_no "would you like to install vlc?"
+if confirmed; then
+  cask_install vlc
+fi
 
-#communication
-cask_install slack
+yes_or_no "would you like to install spotify?"
+if confirmed; then
+  cask_install spotify
+fi
 
-#misc
-cask_install google-chrome
-cask_install dockertoolbox
-cask_install flux
-cask_install nimble
-cask_install dropbox
+yes_or_no "would you like to install transmission?"
+if confirmed; then
+  cask_install transmission
+fi
 
-#security
-cask_install 1password
+#### COMMUNICATION ####
+yes_or_no "would you like to install slack?"
+if confirmed; then
+  cask_install slack
+fi
 
-bot "brew and brew cask packages installed successfully"
+yes_or_no "would you like to install Nylas N1 email client?"
+if confirmed; then
+  cask_install nylas-n1
+fi
+
+#### MISC ####
+yes_or_no "would you like to install google chrome?"
+if confirmed; then
+  cask_install google-chrome
+fi
+
+yes_or_no "would you like to install docker toolbox?"
+if confirmed; then
+  cask_install dockertoolbox
+fi
+
+yes_or_no "would you like to install flux?"
+if confirmed; then
+  cask_install flux
+fi
+
+yes_or_no "would you like to install dropbox?"
+if confirmed; then
+  cask_install dropbox
+fi
+
+#### SECURITY ####
+yes_or_no "would you like to install 1password?"
+if confirmed; then
+  cask_install 1password
+fi
+
+bot "chosen brew and brew cask packages installed successfully"

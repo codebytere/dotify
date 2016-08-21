@@ -3,16 +3,7 @@
 alias back="cd .."
 alias home="cd ~"
 
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias dvlpr="cd ~/Developer"
-
-alias lsa="ls -a"
-alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
-
 ############### SYSTEM ##############
-
-alias customize="brackets ~/.zshrc"
 alias reload!='. ~/.zshrc'
 
 alias cls='clear'

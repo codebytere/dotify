@@ -1,9 +1,9 @@
 [user]
 	name = YOUR NAME
-	email = YOUR EMAIL
+  email = YOUR EMAIL
 
 [core]
-	editor = brackets --wait
+	editor = brackets -- wait
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol, space-before-tab
 	excludesfile = ~/.gitignore
 
