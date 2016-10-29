@@ -56,6 +56,16 @@ if confirmed; then
   cask_install iterm2
 fi
 
+yes_or_no "would you like to install atom editor?"
+if confirmed; then
+  cask_install atom
+fi
+
+yes_or_no "would you like to install sublime text?"
+if confirmed; then
+  cask_install sublime-text3
+fi
+
 #### MEDIA ####
 yes_or_no "would you like to install vlc?"
 if confirmed; then
@@ -66,6 +76,8 @@ yes_or_no "would you like to install spotify?"
 if confirmed; then
   cask_install spotify
 fi
+
+
 
 yes_or_no "would you like to install transmission?"
 if confirmed; then

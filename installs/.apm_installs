@@ -1,0 +1,22 @@
+function require_apm() {
+  running "apm $1"
+  if [[ $(apm list --local | grep $1 | head -1 | cut -d' ' -f1) != $1 ]];
+    then
+      action "apm install $1"
+      apm install $1
+  fi
+  ok
+}
+
+require_apm atom-beautify
+require_apm git-time-machine
+require_apm javascript-snippets
+require_apm language-mips
+require_apm linter
+require_apm merge-conflicts
+require_apm minimap
+require_apm pigments
+require_apm project-manager
+require_apm todo-show
+
+bot "apm packages installed successfully"
