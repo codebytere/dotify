@@ -5,7 +5,7 @@ bot "let's get going! "
 
 # make dotfiles hidden
 running "hiding dotfiles"
-mv ~/dotfiles ~/.dotfiles
+mv /dotfiles ~/.dotfiles
 ok
 
 # install node
@@ -43,17 +43,22 @@ fi
 
 running "Select which bundled brew & brew-cask packages you want to install"
 source installs/.brew_installs
-ok "feel free to add more of your own packages! "
+ok "feel free to add more brew packages! "
 
 # globally install key npm pkgs
 running "Select which bundled npm modules you want to install"
 source installs/.npm_installs
-ok "feel free to add more of your own modules! "
+ok "feel free to add more npm modules! "
 
 # globally install important gems
 running "Select which bundled gems you want to install"
 source installs/.gem_installs
-ok "feel free to add more of your own gems! "
+ok "feel free to add more ruby gems! "
+
+#globally install atom packages
+running "select the atom packages you would like to install"
+source installs/.apm_installs
+ok "feel free to add more atom packages! "
 
 # hard link .zshrc
 running "linking your .zshrc!"
@@ -83,7 +88,7 @@ yes_or_no "Would you like to set your git credentials now?"
 if confirmed; then
   set_git_info
 else
-  bot "ok, but remember to do it before you commit! "
+  bot "ok, but remember to do it before your first commit! "
 
 bot "setting zsh as the user shell"
 CURRENTSHELL=$(dscl . -read /Users/$USER UserShell | awk '{print $2}')
