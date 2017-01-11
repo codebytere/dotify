@@ -2,6 +2,7 @@
 
 alias back="cd .."
 alias home="cd ~"
+alias dv="cd ~/Developer"
 
 ############### SYSTEM ##############
 alias reload!='. ~/.zshrc'
@@ -23,3 +24,6 @@ alias lksc="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resourc
 
 #turn off volume
 alias stfu="osascript -e 'set volume output muted true'"
+
+#recursively delete DS_Store files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"

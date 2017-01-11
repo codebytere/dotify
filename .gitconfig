@@ -67,6 +67,7 @@
 	cp = cherry-pick
 	#############
 	d = diff
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 	#############
 	f = fetch
 	fo = fetch origin
@@ -86,7 +87,7 @@
 	#############
 	co = checkout
 	cob = checkout -b
-  com = checkout master
+	com = checkout master
 	#############
 	pr = prune -v
 	#############
