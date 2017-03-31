@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 source resources.sh
 
 bot "hello! welcome to your new computer"
@@ -10,6 +11,7 @@ ok
 
 # install node
 yes_or_no "would you like to install brew?"
+if confirmed; then
   running "installing node"
   curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
 
@@ -84,11 +86,13 @@ running "linking .gitconfig"
 ln ~/.dotfiles/.gitconfig ~/.gitconfig
 ok
 
+# setup git credentials
 yes_or_no "Would you like to set your git credentials now?"
 if confirmed; then
   set_git_info
 else
   bot "ok, but remember to do it before your first commit! "
+fi
 
 bot "setting zsh as the user shell"
 CURRENTSHELL=$(dscl . -read /Users/$USER UserShell | awk '{print $2}')

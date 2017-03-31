@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+COMPUTERNAME="YOUR NAME's MBP"
+HOSTNAME='mbp'
+LOCALHOSTNAME='mbp'
+
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished

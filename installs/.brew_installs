@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function require_brew() {
   running "brew cask install $1 $2"
   brew list $1 > /dev/null 2>&1 | true
@@ -83,9 +85,14 @@ if confirmed; then
   cask_install slack
 fi
 
-yes_or_no "would you like to install nylas n1?"
+yes_or_no "would you like to install nylas-n1?"
 if confirmed; then
   cask_install nylas-n1
+fi
+
+yes_or_no "would you like to install goofy?"
+if confirmed; then
+  cask_install goofy
 fi
 
 #### MISC ####

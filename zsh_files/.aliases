@@ -2,6 +2,9 @@
 
 alias back="cd .."
 alias home="cd ~"
+
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
 alias dv="cd ~/Developer"
 
 ############### SYSTEM ##############

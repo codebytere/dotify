@@ -1,5 +1,7 @@
+#!/usr/bin/env zsh
+
 ##### INSTALLATION PATH #####
-export ZSH =~/.dotfiles/zsh/.oh-my-zsh
+export ZSH=~/.dotfiles/zsh/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 ##### MISC VARS #####
@@ -16,4 +18,3 @@ plugins=(git)
 
 ##### USER CONFIG #####
 export PATH="YOUR PATH"
-

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function require_apm() {
   running "apm $1"
   if [[ $(apm list --local | grep $1 | head -1 | cut -d' ' -f1) != $1 ]];

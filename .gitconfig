@@ -1,9 +1,9 @@
 [user]
 	name = YOUR NAME
-  email = YOUR EMAIL
+	email = YOUR EMAIL
 
 [core]
-	editor = brackets -- wait
+	editor = nano
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol, space-before-tab
 	excludesfile = ~/.gitignore
 
@@ -21,7 +21,7 @@
 	ui = auto
 
 [help]
-  autocorrect = 1
+	autocorrect = 1
 
 [color "branch"]
 	current = yellow bold
@@ -99,6 +99,7 @@
 	psfo = push -f origin
 	psuo = push -u origin
 	psom = push origin master
+	psuom = push -u origin master
 	#############
 	pl = pull
 	plu = pull -u

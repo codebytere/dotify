@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function require_npm() {
   running "npm $*"
   npm list -g --depth 0 | grep $1@ > /dev/null
@@ -15,7 +17,7 @@ fi
 
 yes_or_no "would you like to install empty-trash-cli?"
 if confirmed; then
-  require_npm empty-trash-cli
+  require_npm empty-trash-cli=
 fi
 
 yes_or_no "would you like to install fkill-cli?"

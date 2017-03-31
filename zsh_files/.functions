@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # make a directory then cd into it
 function mkd() {
 	mkdir -p "$@" && cd "$_";
@@ -31,6 +33,7 @@ function o() {
 	fi;
 }
 
+# toggle dotfiles shown vs hidden
 function toggle_dotfiles(){
   if [ ! -z "$1" ]; then
     show_dotfiles=$1
@@ -47,6 +50,7 @@ function toggle_dotfiles(){
   killall Finder
 }
 
+# prints path to app
 function whichapp() {
   local appNameOrBundleId=$1 isAppName=0 bundleId
   [[ $appNameOrBundleId =~ \.[aA][pP][pP]$ || $appNameOrBundleId =~ ^[^.]+$ ]] && isAppName=1
