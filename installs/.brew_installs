@@ -29,27 +29,22 @@ function cask_install() {
 }
 
 ########## BREW PKGS ##########
-yes_or_no "would you like to install m-cli?"
-if confirmed; then
-  require_brew m-cli
-fi
+running "installing python"
+require_brew python
 
-yes_or_no "would you like to install zsh?"
-if confirmed; then
-  require_brew zsh
-fi
+running "installing rvm"
+require_brew rvm
+
+running "installing zsh"
+require_brew zsh
 
 yes_or_no "would you like to install fontconfig?"
 if confirmed; then
   require_brew fontconfig
 fi
 
-yes_or_no "would you like to install git?"
-if confirmed; then
-  require_brew git
-fi
-
 ########## APPS ###########
+running "installing brew cask"
 brew tap caskroom/cask
 
 #### DEVELOPMENT ####
@@ -121,5 +116,8 @@ yes_or_no "would you like to install 1password?"
 if confirmed; then
   cask_install 1password
 fi
+
+running "cleaning up cask files"
+brew cask cleanup
 
 bot "chosen brew and brew cask packages installed successfully"

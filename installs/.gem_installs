@@ -10,4 +10,10 @@ function require_gem() {
   ok
 }
 
-bot "no ruby gems to install yet! "
+running "installing bundler"
+require_gem bundler
+
+running "installing rails"
+require_gem rails
+
+bot "gems installed successfully"

@@ -4,44 +4,39 @@ source resources.sh
 bot "hello! welcome to your new computer"
 bot "let's get going! "
 
+bot "installing osx command line tools"
+xcode-select --install
+
+# set computer info
+set_computer_info
+
 # make dotfiles hidden
 running "hiding dotfiles"
 mv /dotfiles ~/.dotfiles
 ok
 
-# install node
-yes_or_no "would you like to install brew?"
-if confirmed; then
-  running "installing node"
-  curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
-
-  if [[ $? != 0 ]]; then
-    error "unable to install node -> quitting setup"
-    exit 2
-  fi
-  ok
-else
-  bot "node not installed - moving on"
-fi
-
 # install brew
-yes_or_no "would you like to install brew?"
-if confirmed; then
-  running "installing brew"
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+running "installing brew"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-  if [[ $? != 0 ]]; then
+if [[ $? != 0 ]]; then
     error "unable to install homebrew -> quitting setup"
     exit 2
-  fi
-
-  running "updating to most recent brew version"
-  brew doctor
-  brew update
-  ok
-else
-  bot "brew not installed - moving on"
 fi
+
+running "updating to most recent brew version"
+brew doctor
+brew update
+ok
+
+# install node
+running "installing node"
+curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
+if [[ $? != 0 ]]; then
+    error "unable to install node -> quitting setup"
+    exit 2
+fi
+ok
 
 running "Select which bundled brew & brew-cask packages you want to install"
 source installs/.brew_installs

@@ -5,7 +5,26 @@ function mkd() {
 	mkdir -p "$@" && cd "$_";
 }
 
-# Use Git’s colored diff when available
+# update all the things
+update() {
+    local brew="brew update; brew upgrade;"
+    local gisty="gisty pull_all; gisty sync_delete"
+    local gem="gem update;"
+    local pip="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U -q"
+    sh -c $brew$gisty; sudo sh -c $gem$pip
+}
+
+# change directory to the current Finder directory
+cdf() {
+    target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+    if [ "$target" != "" ]; then
+        cd "$target"; pwd
+    else
+        echo 'No Finder window found' >&2
+    fi
+}
+
+# use Git’s colored diff when available
 hash git &>/dev/null;
 if [ $? -eq 0 ]; then
 	function diff() {
