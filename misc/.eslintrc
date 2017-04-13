@@ -23,7 +23,8 @@
         "$": true
     },
     "extends": [
-        "eslint:recommended"
+        "eslint:recommended",
+        "airbnb"
     ],
     "rules": {
         "no-case-declarations": "warn",
@@ -38,9 +39,8 @@
         "no-self-assign": "warn",
         "no-sparse-arrays": "warn",
         "no-unreachable": "warn",
-
+        "no-var": "error",
         "require-yield": "off",
-
         "array-bracket-spacing": "warn",
         "array-callback-return": "error",
         "arrow-spacing": "warn",
@@ -130,6 +130,7 @@
         ],
         "no-use-before-define": ["error", "nofunc"],
         "no-useless-call": "warn",
+        "no-useless-escape": "warn",
         "no-useless-computed-key": "warn",
         "no-useless-concat": "warn",
         "no-useless-constructor": "warn",
