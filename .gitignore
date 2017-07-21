@@ -1,0 +1,23 @@
+/.buildpath
+/build/
+*/archive/
+
+__MACOSX
+.DS_Store
+
+.project
+.settings
+.classpath
+.sass-cache/
+
+# OS generated files #
+######################
+*/.DS_Store
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+thumbs.db
+Thumbs.db
