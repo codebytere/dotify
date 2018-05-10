@@ -23,8 +23,7 @@
         "$": true
     },
     "extends": [
-        "eslint:recommended",
-        "airbnb"
+        "eslint:recommended"
     ],
     "rules": {
         "no-case-declarations": "warn",
