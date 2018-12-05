@@ -9,7 +9,7 @@ alias dt="cd ~/Desktop"
 alias dv="cd ~/Developer"
 
 # reload zsh config
-alias reload!='. ~/.zshrc'
+alias r!='. ~/.zshrc'
 
 alias cls='clear'
 
