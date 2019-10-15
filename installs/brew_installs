@@ -53,9 +53,9 @@ if confirmed; then
   cask_install iterm2
 fi
 
-yes_or_no "would you like to install atom?"
+yes_or_no "would you like to install VSCode?"
 if confirmed; then
-  cask_install atom
+  cask_install visual-studio-code
 fi
 
 #### MEDIA ####
@@ -78,16 +78,6 @@ fi
 yes_or_no "would you like to install slack?"
 if confirmed; then
   cask_install slack
-fi
-
-yes_or_no "would you like to install nylas-n1?"
-if confirmed; then
-  cask_install nylas-n1
-fi
-
-yes_or_no "would you like to install goofy?"
-if confirmed; then
-  cask_install goofy
 fi
 
 #### MISC ####

@@ -21,7 +21,6 @@ alias spoton="sudo mdutil -a -i on" # Enable Spotlight
 #update OS software, ruby, brew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
 
-
 alias python="python3"
 alias pip="pip3"
 
